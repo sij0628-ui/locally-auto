@@ -1,20 +1,38 @@
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --container-bg: white;
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+    --bg-color: #18191a;
+    --text-color: #e4e6eb;
+    --container-bg: #242526;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
     font-family: sans-serif;
-    background: #f0f2f5;
-    color: #333;
+    background: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background 0.3s, color 0.3s;
 }
 
 .container {
-    background: white;
+    background: var(--container-bg);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--shadow);
     text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 h1 {
@@ -32,7 +50,7 @@ h1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #4CAF50;
+    background: var(--primary-color);
     color: white;
     display: flex;
     justify-content: center;
@@ -42,7 +60,7 @@ h1 {
 }
 
 #generate-btn {
-    background: #4CAF50;
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -53,5 +71,19 @@ h1 {
 }
 
 #generate-btn:hover {
-    background: #45a049;
+    background: var(--primary-hover);
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--container-bg);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
 }
